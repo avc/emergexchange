@@ -79,32 +79,23 @@ class FindMatches(View):
                 # See who needs what I can give.
                 for user2 in User.objects.all():
                     # Do they need what I have?
-                    #for user2_need in user2.need_set:
-
-                    ## Do they have what I need?
-                    #for user2_good in Good.objects.filter(user=user2):
-                    #    if i_need.name == user2_good.name:
-                    #        # Does user2 need what I can give?
-                    #        if Need.objects.filter(user=user2)
-                    #            #transaction = Transaction.objects.create()
-                    #            #tug1 = TransactionUserGroup.objects.create(transaction=transaction, user=uid, good=i_give, need=i_need)
-                    #            #tug2 = TransactionUserGroup.objects.create(transaction=transaction, user=user2, good=i_need, need=i_give)
-                    #            transactions.append([
-                    #                {'giver': me.username, 'good': str(i_give.name), 'need': str(i_need.name)},
-                    #                {'giver': user2.username, 'good': str(i_need.name), 'need': str(i_give.name)}
-                    #            ])
-                    #        else:
-                    #            # No they don't.
-                    #            # See if anyone needs what user2 has.
-                    #            for user3_need in Need.objects.filter(name=user2_good.name):
-                    #                # Does user3 have something I want?
-                    #                user3 = user3_need.user
-                    #                for user3_good in Good.objects.filter(user=user3):
-                    #                    if i_need == user3_good:
-                    #                        # Three way trade found.
-                    #                        transactions.append([
-                    #                            {'giver': me.username, 'good': str(i_give.name), 'need': str(i_need.name)},
-                    #                            {'giver': user2.username, 'good': str(i_need.name), 'need': str(i_give.name)},
-                    #                            {'giver': user3.username, 'good': str(user3_good.name), 'need': str(user3_need.name)}
-                    #                        ])
+                    for user2_need in user2.need_set.filter(name=i_give.name):
+                        # List all the goods they have that I need.
+                        for user2_good in user2.good_set.filter(name=i_need.name):
+                            transactions.append([
+                                {'giver': me.username, 'good': str(i_give.name), 'need': str(i_need.name)},
+                                {'giver': user2.username, 'good': str(user2_good.name), 'need': str(user2_need.name)}
+                            ])
+                    # Look for people who need what they have.
+                    for user2_good in user2.good_set.all():
+                        for user3_need in Need.objects.filter(name=user2_good.name):
+                            # Does user3 have what I need?
+                            user3 = user3_need.user
+                            for user3_good in user3.good_set.filter(name=i_need.name):
+                                # Three way trade found.
+                                transactions.append([
+                                    {'giver': me.username, 'good': str(i_give.name), 'need': str(i_need.name)},
+                                    {'giver': user2.username, 'good': str(user2_good.name), 'need': str(user2_need.name)},
+                                    {'giver': user3.username, 'good': str(user3_good.name), 'need': str(user3_need.name)}
+                                ])
         return JsonResponse(transactions, safe=False)
