@@ -15,6 +15,20 @@ class GoodViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.GoodSerializer
     # filter_fields = ('',)
 
+class UserInfoViewSet(viewsets.ModelViewSet):
+    queryset = UserInfo.objects.all()
+    serializer_class = serializers.UserInfoSerializer
+    # filter_fields = ('',)
+
+class CanonicalGoodViewSet(viewsets.ModelViewSet):
+    queryset = CanonicalGood.objects.all()
+    serializer_class = serializers.CanonicalGoodSerializer
+    # filter_fields = ('',)
+
+class NeedViewSet(viewsets.ModelViewSet):
+    queryset = Need.objects.all()
+    serializer_class = serializers.NeedSerializer
+    # filter_fields = ('',)
 
 class GoodList(View):
     page_arg = 'page'
