@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class CanonicalGood(models.Model):
     name = models.CharField(
@@ -15,8 +16,17 @@ class Good(models.Model):
         max_digits=10,
         decimal_places=2)
 
+class UserInfo(models.Model):
+    user = models.ForeignKey(User, related_name='user-info')
+    address = models.TextField()
+    phone-number = models.CharField(max_length=10)
+    
+
 class Transaction(models.Model):
-    created_at = models.DateField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    user = models.ForeignKey(User, related_name='transaction-user')
+
 
 class Need(models.Model):
     name = models.ForeignKey(CanonicalGood)
