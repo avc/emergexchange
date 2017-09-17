@@ -22,19 +22,13 @@ class UserCreate(APIView):
 from django.contrib.auth import authenticate
 
 class UserLogin(APIView):
-    def post(self, request):
+    def post(self, request, format='json'):
         # username = request.POST['username']
         # password = request.POST['password']
         username = request.POST.get('username')
         password = request.POST.get('password')
-        user = authenticate(username=username, password=password)
+        user = authenticate(request, username=username, password=password)
         if user is not None:
             return Response({'username': user.username, 'id': user.id})
-    # def post(self, request, *args, **kwargs):
-    #     password_given = kwargs.get('password')
-    #     username_given = kwargs.get('username')
-        # user = authenticate(username=kwargs.get('username'), password=kwargs.get('password'))
-        # if user:
-        # return Response({'username': username_given, 'password': password_given})
-        # else:
-        #     return Response(status=status.HTTP_400_BAD_REQUEST)
+        else:
+            return Response({'error': 'user not found'})

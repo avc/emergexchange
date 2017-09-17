@@ -78,6 +78,7 @@ class FindMatches(View):
             for i_give in me.good_set.all():
                 # See who needs what I can give.
                 for user2 in User.objects.all():
+                    pass
                     # Do they need what I have?
                     #for user2_need in user2.need_set:
 
