@@ -25,7 +25,7 @@ SECRET_KEY = ')*)m2rtiu*2ycs6pi*^+&2ac5y=82frf*vi!2^9=(4gm)d+wms'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['165.227.102.80', 'emergexchange.com', 'www.emergexchange.com']
+ALLOWED_HOSTS = ['localhost', '165.227.102.80', 'emergexchange.com', 'www.emergexchange.com'] 
 
 
 # Application definition
@@ -121,4 +121,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 CSRF_COOKIE_SECURE = False
