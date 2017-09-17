@@ -10,6 +10,7 @@ class GoodSerializer(serializers.ModelSerializer):
         fields = (
             'id',
             'name',
+            'user',
             'description',
             'modified',
             'value',
@@ -18,7 +19,7 @@ class GoodSerializer(serializers.ModelSerializer):
 class UserInfoSerializer(serializers.ModelSerializer):
     username = serializers.ReadOnlyField(source='user.username')
     class Meta:
-        model = models.UserInfo
+        model = models.User
         fields = (
             'id',
             'user',
@@ -42,7 +43,8 @@ class NeedSerializer(serializers.ModelSerializer):
         fields = (
             'id',
             'name',
-            'detail',
+            'user',
+            'des',
             'modified',
             'value',
         )

@@ -15,10 +15,13 @@ class GoodViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.GoodSerializer
     # filter_fields = ('',)
 
+# class UserInfoViewSet(viewsets.ModelViewSet):
+#     queryset = User.objects.all()
+#     serializer_class = serializers.UserInfoSerializer
 class UserInfoViewSet(viewsets.ModelViewSet):
     queryset = UserInfo.objects.all()
     serializer_class = serializers.UserInfoSerializer
-    # filter_fields = ('',)
+    filter_fields = ('',)
 
 class CanonicalGoodViewSet(viewsets.ModelViewSet):
     queryset = CanonicalGood.objects.all()
