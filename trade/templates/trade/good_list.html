@@ -1,0 +1,47 @@
+{% extends parent_template|default:"trade/base_trade.html" %}
+
+{% block title %}
+{{ block.super }} - Goods List
+{% endblock %}
+
+{% block org_content %}
+  <h2>Goods List</h2>
+    <div>
+      <a class="btn btn-default" href="">
+        Create Good</a>
+    </div>
+  <ul class="list-group">
+    {% for good in good_list %}
+      <li class="list-group-item">
+        <p><a href="">
+          {{ good.name|title }}</a></p>
+        <p>
+          <a class="btn btn-default btn-sm" href="">
+            Edit Good</a>
+          <a class="btn btn-danger btn-sm" href="">
+            Delete Good</a>
+        </p>
+      </li>
+    {% empty %}
+      <li><em>There are currently no goods available.</em></li>
+    {% endfor %}
+  </ul>
+  {% if is_paginated %}
+    <ul>
+      {% if prev_url %}
+        <li>
+          <a href="{{ prev_url }}">
+            Previous</a></li>
+      {% endif %}
+        <li>
+          Page {{ good_list.number }}
+          of {{ paginator.num_pages }}
+        </li>
+      {% if next_url %}
+        <li>
+          <a href="{{ next_url }}">
+            Next</a></li>
+      {% endif %}
+    </ul>
+  {% endif %}
+{% endblock %}
