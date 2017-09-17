@@ -3,6 +3,18 @@ from django.views.generic import View
 from django.core.paginator import (
     EmptyPage, PageNotAnInteger, Paginator)
 from .models import *
+from rest_framework import generics, viewsets
+
+from . import serializers
+
+# from django_filters.rest_framework import DjangoFilterBackend
+
+#PostSerializer:
+class GoodViewSet(viewsets.ModelViewSet):
+    queryset = Good.objects.all()
+    serializer_class = serializers.GoodSerializer
+    # filter_fields = ('',)
+
 
 class GoodList(View):
     page_arg = 'page'
@@ -36,4 +48,3 @@ class GoodList(View):
             'next_url': next_url,
             'tag_list': page}
         return render(request, self.template_name, context)
-

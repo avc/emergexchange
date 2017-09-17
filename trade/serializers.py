@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from . import models
 
 class GoodSerializer(serializers.ModelSerializer):
-    username = serializers.ReadOnlyField(source='user.username')
+    # username = serializers.ReadOnlyField(source='user.username')
     class Meta:
         model = models.Good
         fields = (
