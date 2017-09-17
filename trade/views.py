@@ -87,16 +87,16 @@ class FindMatches(View):
                                 {'giver': me.username, 'good': str(i_give.name), 'need': str(i_need.name)},
                                 {'giver': user2.username, 'good': str(user2_good.name), 'need': str(user2_need.name)}
                             ])
-                    # Look for people who need what they have.
-                    for user2_good in user2.good_set.all():
-                        for user3_need in Need.objects.filter(name=user2_good.name):
-                            # Does user3 have what I need?
-                            user3 = user3_need.user
-                            for user3_good in user3.good_set.filter(name=i_need.name):
-                                # Three way trade found.
-                                transactions.append([
-                                    {'giver': me.username, 'good': str(i_give.name), 'need': str(i_need.name)},
-                                    {'giver': user2.username, 'good': str(user2_good.name), 'need': str(user2_need.name)},
-                                    {'giver': user3.username, 'good': str(user3_good.name), 'need': str(user3_need.name)}
-                                ])
+                        # Look for people who need what they have.
+                        for user2_good in user2.good_set.all():
+                            for user3_need in Need.objects.filter(name=user2_good.name):
+                                # Does user3 have what I need?
+                                user3 = user3_need.user
+                                for user3_good in user3.good_set.filter(name=i_need.name):
+                                    # Three way trade found.
+                                    transactions.append([
+                                        {'giver': me.username, 'good': str(i_give.name), 'need': str(i_need.name)},
+                                        {'giver': user2.username, 'good': str(user2_good.name), 'need': str(user2_need.name)},
+                                        {'giver': user3.username, 'good': str(user3_good.name), 'need': str(user3_need.name)}
+                                    ])
         return JsonResponse(transactions, safe=False)
