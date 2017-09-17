@@ -1,0 +1,163 @@
+
+body {
+    background-color: #f6f3f7;
+}
+
+.blue-background {
+    background-color: #0E79A9 !important;
+}
+
+.blue-font {
+    color: #0E79A9 !important;
+}
+
+input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #03a9f4;
+    -webkit-box-shadow: 0 1px 0 0 #03a9f4;
+    box-shadow: 0 1px 0 0 #03a9f4;
+}
+
+input:not([type]):focus:not([readonly])+label, input[type=text]:not(.browser-default):focus:not([readonly])+label, input[type=password]:not(.browser-default):focus:not([readonly])+label, input[type=email]:not(.browser-default):focus:not([readonly])+label, input[type=url]:not(.browser-default):focus:not([readonly])+label, input[type=time]:not(.browser-default):focus:not([readonly])+label, input[type=date]:not(.browser-default):focus:not([readonly])+label, input[type=datetime]:not(.browser-default):focus:not([readonly])+label, input[type=datetime-local]:not(.browser-default):focus:not([readonly])+label, input[type=tel]:not(.browser-default):focus:not([readonly])+label, input[type=number]:not(.browser-default):focus:not([readonly])+label, input[type=search]:not(.browser-default):focus:not([readonly])+label, textarea.materialize-textarea:focus:not([readonly])+label {
+    color: #03a9f4;
+}
+
+.dropdown-content li>a, .dropdown-content li>span {
+    color: #03a9f4;
+}
+
+[type="checkbox"]:checked+label:before {
+    border-right: 2px solid #03a9f4;
+    border-bottom: 2px solid #03a9f4;
+}
+
+.modal {
+    width: 30%;
+}
+
+.modal > .modal-content > form > div.row > div.input-field {
+    padding: 0;
+}
+
+.modal > .modal-content > form > div.row > div.input-field > label{
+    left: 0;
+}
+
+.modal > .modal-footer {
+    height: 42px;
+}
+
+/* Style all font awesome icons */
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+    opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+#login-modal > .modal-content > div > span {
+    font-size: 1.2rem;
+    padding-left: 10px;
+}
+
+div.facebook-div {
+    background: #3B5998;    
+    color: white;
+}
+/* Facebook */
+.fa-facebook {
+    color: white;
+}
+
+.fa-facebook:before {
+    position: relative;
+    top: 3px;
+}
+
+div.twitter-div {
+    background: #55ACEE;    
+    color: white;
+}
+/* Twitter */
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-twitter:before {
+    position: relative;
+    top: 3px;
+}
+
+.page-footer > .container > .row {
+    margin-bottom: 0px;
+} 
+
+/* Account Page */
+
+div.divider {
+    height: 1px;
+    width: auto;
+    color: black;
+    margin: -.4rem auto 1rem auto;
+}
+
+div.container.account {
+    min-height: calc(100vh - 64px - 177.3px);
+}
+
+div.container.account > div.section > div.row:first-of-type {
+    margin-bottom: .2rem;
+}
+
+div.container.account > div.section > div.row > div.col > h3 > i.material-icons {
+    font-size: 3.6rem;
+    position: relative;
+    top: .9rem;
+}
+
+div.container.account > div.section > div.row.account-section-container > div.col > div.row.account-section > div.col {
+    border-radius: 2px;
+    background-color: white;
+    padding: .4rem 1.4rem;
+}
+
+div.container.account > div.section > div.row.account-section-container > div.col > div.row.account-section > div.col > h5 {
+    font-size: 2.3rem;
+}
+
+div.container.account > div.section > div.row.account-section-container > div.col > div.row.account-section > div.col > h5,
+div.container.account > div.section > div.row.account-section-container > div.col > div.row.account-section > div.col > div.divider {
+    color: #666;
+}
+
+div.container.account > div.section > div.row.account-section-container > div.col > div.row.account-section > div.col > form > .input-field.col .dropdown-content [type="checkbox"]+label {
+    left: 0;
+    top: -10px;
+}
+
+div.container.account > div.section > div.row.account-section-container > div.col > div.row.account-section > div.col > form > div.col:last-of-type {
+    margin-bottom: 1rem;
+}
+
+div.container.account > div.section > div.row.account-section-container > div.col > div.row.account-section > div.col > form > div.col:last-of-type > a:last-of-type {
+    margin-right: .4rem;
+}
+
+div.container.account > div.section > div.row.account-section-container > div.col > div.row.account-section > div.col > form > .input-field.col {
+    padding: 0 .75rem 0 0;
+}
+
+div.container.account > div.section > div.row.account-section-container > div.col > div.row.account-section > div.col > form > .input-field.col label {
+    left: 0;
+}
+
+div.container.account > div.section > div.row.account-section-container > div.col > div.row.account-section > div.col > div.col.s12 {
+    padding: 0;
+}

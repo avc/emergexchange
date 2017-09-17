@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Emergexchange</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body ng-app="app" ng-controller="indexController">
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Emergexchange</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a class="modal-trigger" href="#login-modal">Log In</a></li>
+        <li><a class="modal-trigger" href="#signup-modal">Sign Up</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Log In</a></li>
+        <li><a href="#">Sign Up</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <div class="carousel carousel-slider center" data-indicators="true">
+    <div class="carousel-fixed-item center">
+      <a class="btn waves-effect white grey-text darken-text-2">button</a>
+    </div>
+    <div class="carousel-item red white-text" href="#one!">
+      <h2>First Panel</h2>
+      <p class="white-text">This is your first panel</p>
+    </div>
+    <div class="carousel-item amber white-text" href="#two!">
+      <h2>Second Panel</h2>
+      <p class="white-text">This is your second panel</p>
+    </div>
+    <div class="carousel-item green white-text" href="#three!">
+      <h2>Third Panel</h2>
+      <p class="white-text">This is your third panel</p>
+    </div>
+    <div class="carousel-item blue white-text" href="#four!">
+      <h2>Fourth Panel</h2>
+      <p class="white-text">This is your fourth panel</p>
+    </div>
+  </div>
+        
+
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">Speeds up development</h5>
+
+            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">User Experience Focused</h5>
+
+            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">Easy to work with</h5>
+
+            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br><br>
+  </div>
+
+  <footer class="page-footer light-blue">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Structure -->
+  <div id="login-modal" class="modal">
+    <div class="modal-content">
+      <h4>Log In</h4>
+      <form>
+	      <div class="row">
+	        <div class="input-field col s12">
+	          <input id="username" type="text" class="validate" ng-model="user_login.username">
+	          <label for="username">Username</label>
+	        </div>
+	        <div class="input-field col s12">
+	          <input id="password" type="password" class="validate" ng-model="user_login.password">
+	          <label for="password">Password</label>
+	        </div>
+	      </div>
+	  </form>
+      <a href="#!" class="modal-action modal-close light-blue lighten-1 btn right" ng-click="login()">Log In</a>	  
+    </div>
+    <div class="modal-footer">
+    </div>
+  </div>  
+
+  <!-- Modal Structure -->
+  <div id="signup-modal" class="modal">
+    <div class="modal-content">
+      <h4>Sign Up</h4>
+      <form>
+	      <div class="row">
+	        <div class="input-field col s12">
+	          <input id="username" type="text" class="validate" ng-model="signup.username">
+	          <label for="username">Username</label>
+	        </div>
+	        <div class="input-field col s12">
+	          <input id="password" type="password" class="validate" ng-model="signup.password">
+	          <label for="password">Password</label>
+	        </div>
+	        <div class="input-field col s12">
+	          <input id="password" type="password" class="validate" ng-model="signup.conf_password">
+	          <label for="password">Confirm Password</label>
+	        </div>
+	        <div class="input-field col s12">
+	          <input id="email" type="text" class="validate" ng-model="usignupser.email">
+	          <label for="email">Email</label>
+	        </div>	        	        
+	      </div>
+	  </form>
+      <a href="#!" class="modal-action modal-close light-blue lighten-1 btn right" ng-click="signup()">Sign Up</a>	  
+    </div>
+    <div class="modal-footer">
+    </div>
+  </div>    
+
+
+  <!--  Scripts-->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers/indexController.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
