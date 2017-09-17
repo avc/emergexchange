@@ -23,8 +23,10 @@ from django.contrib.auth import authenticate
 
 class UserLogin(APIView):
     def post(self, request):
-        username = request.POST['username']
-        password = request.POST['password']
+        # username = request.POST['username']
+        # password = request.POST['password']
+        username = request.POST.get('username')
+        password = request.POST.get('password')
         user = authenticate(username=username, password=password)
         if user is not None:
             return Response({'username': user.username, 'id': user.id})
