@@ -17,16 +17,9 @@ class Good(models.Model):
         decimal_places=2)
 
 class UserInfo(models.Model):
-    user = models.ForeignKey(User, related_name='user-info')
+    user = models.ForeignKey(User)
     address = models.TextField()
-    phone-number = models.CharField(max_length=10)
-    
-
-class Transaction(models.Model):
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-    user = models.ForeignKey(User, related_name='transaction-user')
-
+    phone_number = models.CharField(max_length=10)
 
 class Need(models.Model):
     name = models.ForeignKey(CanonicalGood)
@@ -36,3 +29,13 @@ class Need(models.Model):
     value = models.DecimalField(
         max_digits=10,
         decimal_places=2)
+
+class Transaction(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+class TransactionUserGood(models.Model):
+    transaction = models.ForeignKey(Transaction)
+    user = models.ForeignKey(User)
+    good = models.ForeignKey(Good)
+    need = models.ForeignKey(Need)
