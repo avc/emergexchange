@@ -15,6 +15,9 @@ class Good(models.Model):
         max_digits=10,
         decimal_places=2)
 
+class Transaction(models.Model):
+    created_at = models.DateField()
+
 class Need(models.Model):
     name = models.ForeignKey(CanonicalGood)
     detail = models.TextField()
